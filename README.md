@@ -86,9 +86,11 @@ In index.js file write following. First line sets node as script interpreter. It
 saves some time before execution, normally spent to figure out a language the
 script is written in.
 
-    #!/usr/bin/env node
+```javascript
+#!/usr/bin/env node
 
-	console.log("Hello, hna!");
+console.log("Hello, hna!");
+```
 
 Now, append this code to generated package.json file.
 
@@ -101,3 +103,49 @@ Install your package globally. If there's permisson error - run with sudo.
     $ npm i -g
 
 And now, voila! `hna` command is available and prints some very nice message.
+
+#### Installing dependecies
+
+Run this commands to install all packages required to develop our project.
+
+    $ npm i -s axios commander inquirer mongoose nodemailer readability-node jsdom@^9.12.0 uuid
+
+	$ npm i -D mocha chai
+
+#### Setting up test environment
+
+To handle our test cases, we will use previously installed **mocha** and
+**chai**. Mocha is test framework that runs both in node.js environment and in
+the browser. Chai is assertion library. It will be used to decide whether test
+passes or not.
+
+Every test file will look like this: `example.test.js`.
+
+Let's write some example test.
+
+```javascript
+const { assert } = require("chai");
+
+describe("Example test", () => {
+	it("should return true", () => {
+		assert.equal(1, 1);
+	});
+});
+```
+
+Project structure now looks like this:
+
+    /lib
+	  /actions
+	    examples.test.js
+	index.js
+	package.json
+
+Change package.json _"test"_ property to
+
+    "test": "mocha lib/**/*.test.js
+
+Run tests. If they pass, then everything is ok! To save some typing, use this
+shortcut.
+
+    $ npm t
