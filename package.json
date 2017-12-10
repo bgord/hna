@@ -7,7 +7,7 @@
 		"test": "mocha lib/**/*.test.js"
 	},
 	"bin": {
-		"hna": "index.js"
+		"raok": "index.js"
 	},
 	"repository": {
 		"type": "git",
