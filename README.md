@@ -1,5 +1,5 @@
-# rafk
+# raok
 
-read artricles from kindle
+read articles on kindle
 
-**rafk** is command-line tool to handle news overload problem.
+**raok** is command-line tool to handle news overload problem.
