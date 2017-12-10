@@ -1,8 +1,5 @@
-# hna
+# rafk
 
-Hacker news aggregator.
+read artricles from kindle
 
-**hna** is command-line tool to handle news overload problem.
-
-Blog post about developing this project is in **BLOGPOST.md** file in this
-repository.
+**rafk** is command-line tool to handle news overload problem.
