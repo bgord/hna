@@ -1,10 +1,11 @@
 sources:
   hn:
-    url: "https://hacker-news.firebaseio.com/v0/topstories.json"
+    base_url: "https://hacker-news.firebaseio.com/v0/topstories.json"
     min_articles: 1
     max_articles: 500
+    base_single_url: "https://hacker-news.firebaseio.com/v0/item"
   pocket:
-    url: "https://getpocket.com/v3/get"
+    base_url: "https://getpocket.com/v3/get"
     min_articles: 1
     max_articles: 100
 default_source: "hn"

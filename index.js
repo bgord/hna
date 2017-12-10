@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 require("http").globalAgent.maxSockets = 501;
 
 const { fetch } = require("./lib/actions");
-const { get_config } = require("./lib/utils");
+const { get_config } = require("./lib/utils/misc");
 const config = get_config();
 
 program
