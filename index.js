@@ -4,11 +4,13 @@ const program = require("commander");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 require("http").globalAgent.maxSockets = 501;
+const { start_db } = require("./lib/utils/db");
 
 const { fetch } = require("./lib/actions");
 const { get_config } = require("./lib/utils/misc");
 const config = get_config();
 
+const db = start_db();
 program
 	.command("fetch <number>")
 	.alias("f")
@@ -20,6 +22,6 @@ program
 		"Which source to fetch from",
 		config.default_source
 	)
-	.action(fetch);
+	.action(fetch(db));
 
 program.parse(process.argv);
