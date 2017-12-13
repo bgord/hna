@@ -6,6 +6,7 @@ sources:
     base_single_url: "https://hacker-news.firebaseio.com/v0/item"
   pocket:
     base_url: "https://getpocket.com/v3/get"
+    archive_url: "https://getpocket.com/v3/send"
     min_articles: 1
     max_articles: 100
     consumer_key: ""
