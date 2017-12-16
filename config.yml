@@ -15,3 +15,7 @@ sources:
 default_source: "hn"
 app_name: "raok"
 db_port: 27000
+blocked_keywords:
+  - "bitcoin"
+  - "chrome"
+  - "webassembly"
