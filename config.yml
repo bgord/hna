@@ -26,3 +26,14 @@ review:
   default_type: "unreviewed"
   min_articles: 1
   max_articles: 25
+list:
+  types:
+    - "sent"
+    - "interesting"
+  sorts:
+    - "desc"
+    - "asc"
+  default_type: "interesting"
+  default_sort: "desc"
+  min_articles: 1
+  max_articles: 25

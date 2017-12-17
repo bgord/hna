@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 require("http").globalAgent.maxSockets = 501;
 const { start_db } = require("./lib/utils/db");
 
-const { fetch, add, review } = require("./lib/actions");
+const { fetch, add, review, list } = require("./lib/actions");
 const { get_config } = require("./lib/utils/misc");
 const config = get_config();
 
@@ -42,5 +42,21 @@ program
 		config.review.default_type
 	)
 	.action(review(db));
+
+program
+	.command("list <number>")
+	.alias("l")
+	.description("List articles basing on given filters")
+	.option(
+		"-t, --type <type>",
+		"Match articles only with given type",
+		config.list.default_type
+	)
+	.option(
+		"-s, --sort <sort>",
+		"Sort articles by date",
+		config.list.default_sort
+	)
+	.action(list(db));
 
 program.parse(process.argv);
