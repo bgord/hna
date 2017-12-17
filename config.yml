@@ -19,3 +19,10 @@ blocked_keywords:
   - "bitcoin"
   - "chrome"
   - "webassembly"
+review:
+  types:
+    - "unreviewed"
+    - "interesting"
+  default_type: "unreviewed"
+  min_articles: 1
+  max_articles: 25

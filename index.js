@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 require("http").globalAgent.maxSockets = 501;
 const { start_db } = require("./lib/utils/db");
 
-const { fetch, add } = require("./lib/actions");
+const { fetch, add, review } = require("./lib/actions");
 const { get_config } = require("./lib/utils/misc");
 const config = get_config();
 
@@ -31,5 +31,16 @@ program
 	.option("-t, --title <title>", "Title of the article")
 	.option("-u, --url <url>", "URL of the article")
 	.action(add(db));
+
+program
+	.command("review <number>")
+	.alias("r")
+	.description("Match articles as interesting or not")
+	.option(
+		"-t, --type <type>",
+		"Type of articles to review",
+		config.review.default_type
+	)
+	.action(review(db));
 
 program.parse(process.argv);
