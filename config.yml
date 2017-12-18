@@ -40,3 +40,4 @@ list:
 push:
   min_articles: 1
   max_articles: 10
+  chars_per_second: 1000

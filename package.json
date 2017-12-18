@@ -29,6 +29,7 @@
 		"js-yaml": "^3.10.0",
 		"jsdom": "^9.12.0",
 		"locus": "^2.0.1",
+		"moment": "^2.20.0",
 		"mongoose": "^4.13.4",
 		"nodemailer": "^4.4.0",
 		"readability-node": "^0.1.0",
