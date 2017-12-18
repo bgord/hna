@@ -37,3 +37,6 @@ list:
   default_sort: "desc"
   min_articles: 1
   max_articles: 25
+push:
+  min_articles: 1
+  max_articles: 10
