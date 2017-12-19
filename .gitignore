@@ -3,3 +3,5 @@ tmp_files/*.html
 newspapers/*.html
 newspapers/*.epub
 newspapers/*.mobi
+newspapers/*.txt
+newspapers/*.zip
