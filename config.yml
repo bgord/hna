@@ -41,3 +41,9 @@ push:
   min_articles: 1
   max_articles: 10
   chars_per_second: 1000
+nodemailer:
+  service: "gmail"
+  auth:
+    user: ""
+    pass: ""
+kindle_email: ""
