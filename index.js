@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+global.BASE_PATH = __dirname;
+
 const program = require("commander");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
