@@ -39,9 +39,9 @@ program
 	.alias("r")
 	.description("Match articles as interesting or not")
 	.option(
-		"-t, --type <type>",
+		"-q, --query <query>",
 		"Type of articles to review",
-		config.review.default_type
+		config.review.default_query
 	)
 	.action(review(db));
 
