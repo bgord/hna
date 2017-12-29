@@ -48,16 +48,11 @@ program
 program
 	.command("list <number>")
 	.alias("l")
-	.description("List articles basing on given filters")
+	.description("List articles basing on given query")
 	.option(
-		"-t, --type <type>",
-		"Match articles only with given type",
-		config.list.default_type
-	)
-	.option(
-		"-s, --sort <sort>",
-		"Sort articles by date",
-		config.list.default_sort
+		"-q, --query <query>",
+		"Match articles only with given query",
+		config.list.default_query
 	)
 	.action(list(db));
 

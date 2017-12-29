@@ -27,14 +27,11 @@ review:
   min_articles: 1
   max_articles: 25
 list:
-  types:
+  queries:
     - "sent"
     - "interesting"
-  sorts:
-    - "desc"
-    - "asc"
-  default_type: "interesting"
-  default_sort: "desc"
+    - "unreviewed"
+  default_query: "interesting"
   min_articles: 1
   max_articles: 25
 push:
