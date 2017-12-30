@@ -8,7 +8,7 @@ mongoose.Promise = global.Promise;
 require("http").globalAgent.maxSockets = 501;
 const { start_db } = require("./lib/utils/db");
 
-const { fetch, add, review, list, push } = require("./lib/actions");
+const { fetch, add, review, list, push, stats } = require("./lib/actions");
 const { get_config } = require("./lib/utils/misc");
 const config = get_config();
 
@@ -61,5 +61,11 @@ program
 	.alias("p")
 	.description("Send article to your Kindle device")
 	.action(push(db));
+
+program
+	.command("stats")
+	.alias("s")
+	.description("Display stats about your use of raok")
+	.action(stats(db));
 
 program.parse(process.argv);
