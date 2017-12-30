@@ -17,8 +17,7 @@ const {
 	stats,
 	search,
 } = require("./lib/actions");
-const { get_config } = require("./lib/utils/misc");
-const config = get_config();
+const config = require("./lib/utils/misc").get_config();
 
 const db = start_db();
 
