@@ -8,7 +8,15 @@ mongoose.Promise = global.Promise;
 require("http").globalAgent.maxSockets = 501;
 const { start_db } = require("./lib/utils/db");
 
-const { fetch, add, review, list, push, stats } = require("./lib/actions");
+const {
+	fetch,
+	add,
+	review,
+	list,
+	push,
+	stats,
+	search,
+} = require("./lib/actions");
 const { get_config } = require("./lib/utils/misc");
 const config = get_config();
 
@@ -82,5 +90,12 @@ program
 	.alias("s")
 	.description("Display stats about your use of raok")
 	.action(with_err_handling(stats(db)));
+
+program
+	.command("search")
+	.alias("se")
+	.description("Search title basing on given query")
+	.option("-q, --query <query>", "Search basing on query")
+	.action(with_err_handling(search(db)));
 
 program.parse(process.argv);
