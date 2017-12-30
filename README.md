@@ -4,6 +4,8 @@ read articles on kindle
 
 **raok** is a command-line tool that aims to handle news overload problem.
 
+The project reduces amount of time I compulsively scroll through Hacker News or other news pages as well as the time spend staring at the screen of computer or smartphone. It allows me to have dedicated time to read articles I consciously chosen, on the device adapted to reading. Additional value comes from some interesting facts I can retrieve from my activity - I like numbers!
+
 In order to run **raok**, you must have [pandoc](http://pandoc.org/), [calibre](https://calibre-ebook.com/), [mongodb](https://www.mongodb.com/) and [node & npm](https://nodejs.org/en/) installed on your Linux machine.
 
 ## Setup
@@ -53,9 +55,7 @@ Typical flow looks like this:
 * You can do it by fetching specified number of articles from Hacker News or from Pocket. In order to be able to retrieve articles from your Pocket account, you must set **consumer_key**, **request_token**, **access_token** in `config.yml`.
 * You can add single article, providing it's **title** and **url**.
 
-```console
-$ raok add -t "Some awesome title" -u "https://some.com/awesome/article/uaeigoiaej"
-```
+![add](docs/add.png)
 
 Every article can be in only one of states:
 
@@ -68,13 +68,11 @@ By default, every article is **unreviewed**.
 
 In `config.yml` you can list **blocked_keywords** - title that contains at least one of this words will not be inserted to the database. You can also set _default source_ and min and max number or articles you're able to retrieve in one command.
 
-It fetches 15 articles from default source - Hacker News.
+It fetches 30 articles from default source - Hacker News.
 
-```console
-$ raok fetch 15
-```
+![fetch](docs/fetch.png)
 
-This command fetches 10 articles from Pocket.
+This command fetches 15 articles from Pocket.
 
 ```console
 $ raok f 15 -s pocket
@@ -90,9 +88,7 @@ Very important step of **raok** is the review process, when you decide, which ar
 
 By default, you review **unreviewed** articles.
 
-```console
-$ raok review 25
-```
+![review](docs/review.png)
 
 To review articles already marked as **interesting**, use this command.
 
@@ -112,6 +108,8 @@ The most spectacular phase - PUSH. **raok** grabs number of articles, gets their
 
 > You must provide Kindle email and credentials to an email address that your Kindle email can receive content from.
 
+![push](docs/push.png)
+
 After that, if push succeeds, state of sent articles' changes to its final form - **sent**.
 
 ## Additional sub-commands
@@ -120,22 +118,18 @@ After that, if push succeeds, state of sent articles' changes to its final form 
 
 In this section, you can read some information about your use of **raok**, number and percentage of articles you found interestig, most popular words etc.
 
-```console
-$ raok stats
-```
+![stats](docs/stats.png)
 
 ### Search
 
 It's kind of self-explanatory.
 
-```console
-$ raok search -q "fancy title"
-```
+![search](docs/search.png)
 
 ### List
 
 Similarly to **review** - you can add your own queries, in `lib/utils/db/list_queries.js` file and then append the name of it in list->queries section in `config.yml`.
 
-```console
-$ raok list 5 -q unreviewed
-```
+![list](docs/list.png)
+
+Feel free to contribute or contact me when something is wrong!
