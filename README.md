@@ -20,19 +20,27 @@ nohup mongod --port 27000 &
 
 Make it executable.
 
-> $ chmod u+x /path/to/run_mongodb_locally.sh
+```console
+$ chmod u+x /path/to/run_mongodb_locally.sh
+```
 
 Edit crontab file.
 
-> $ crontab -e
+```console
+$ crontab -e
+```
 
 Append line.
 
-> @reboot /path/to/run_mongodb_locally.sh
+```console
+@reboot /path/to/run_mongodb_locally.sh
+```
 
 Clone this repo and cd to id and then run the command below.
 
-> $ npm i -g
+```console
+$ npm i -g
+```
 
 After this, **raok** is available globally.
 
@@ -45,7 +53,9 @@ Typical flow looks like this:
 * You can do it by fetching specified number of articles from Hacker News or from Pocket. In order to be able to retrieve articles from your Pocket account, you must set **consumer_key**, **request_token**, **access_token** in `config.yml`.
 * You can add single article, providing it's **title** and **url**.
 
-> $ raok add -t "Some awesome title" -u "https://some.com/awesome/article/uaeigoiaej"
+```console
+$ raok add -t "Some awesome title" -u "https://some.com/awesome/article/uaeigoiaej"
+```
 
 Every article can be in only one of states:
 
@@ -60,11 +70,15 @@ In `config.yml` you can list **blocked_keywords** - title that contains at least
 
 It fetches 15 articles from default source - Hacker News.
 
-> $ raok fetch 15
+```console
+$ raok fetch 15
+```
 
 This command fetches 10 articles from Pocket.
 
-> $ raok f 15 -s pocket
+```console
+$ raok f 15 -s pocket
+```
 
 > **I will add more sources soon.**
 
@@ -76,11 +90,15 @@ Very important step of **raok** is the review process, when you decide, which ar
 
 By default, you review **unreviewed** articles.
 
-> $ raok review 25
+```console
+$ raok review 25
+```
 
 To review articles already marked as **interesting**, use this command.
 
-> $ raok r 25 -q interesting
+```console
+$ raok r 25 -q interesting
+```
 
 > You can define your own query (an object that is being passed to **find** method in mongodb query) in `lib/utils/db/review_queries.js`, don't forget to add it to `config.yml` review->queries section.
 
@@ -102,16 +120,22 @@ After that, if push succeeds, state of sent articles' changes to its final form 
 
 In this section, you can read some information about your use of **raok**, number and percentage of articles you found interestig, most popular words etc.
 
-> $ raok stats
+```console
+$ raok stats
+```
 
 ### Search
 
 It's kind of self-explanatory.
 
-> $ raok search -q "fancy title"
+```console
+$ raok search -q "fancy title"
+```
 
 ### List
 
 Similarly to **review** - you can add your own queries, in `lib/utils/db/list_queries.js` file and then append the name of it in list->queries section in `config.yml`.
 
-> $ raok list 5 -q unreviewed
+```console
+$ raok list 5 -q unreviewed
+```
