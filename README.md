@@ -53,7 +53,7 @@ Typical flow looks like this:
 ### 1. Gather articles.
 
 * You can do it by fetching specified number of articles from Hacker News or from Pocket. In order to be able to retrieve articles from your Pocket account, you must set **consumer_key**, **request_token**, **access_token** in `config.yml`.
-* You can add single article, providing it's **title** and **url**.
+* You can add single article, providing its **title** and **url**.
 
 ![add](docs/add.png)
 
@@ -66,7 +66,7 @@ Every article can be in only one of states:
 
 By default, every article is **unreviewed**.
 
-In `config.yml` you can list **blocked_keywords** - title that contains at least one of this words will not be inserted to the database. You can also set _default source_ and min and max number or articles you're able to retrieve in one command.
+In `config.yml` you can list **blocked_keywords** - title that contains at least one of this words will not be inserted to the database. You can also set _default source_ and _min_ and _max_ number or articles you're able to retrieve in one command.
 
 It fetches 30 articles from default source - Hacker News.
 
@@ -96,7 +96,7 @@ To review articles already marked as **interesting**, use this command.
 $ raok r 25 -q interesting
 ```
 
-> You can define your own query (an object that is being passed to **find** method in mongodb query) in `lib/utils/db/review_queries.js`, don't forget to add it to `config.yml` review->queries section.
+> You can define your own query (an object that is being passed to **find** method in mongodb query) in `lib/utils/db/review_queries.js`, don't forget to add it to `config.yml` review -> queries section.
 
 After review, each article is either in **interesting** or **boring** state.
 
@@ -128,7 +128,7 @@ It's kind of self-explanatory.
 
 ### List
 
-Similarly to **review** - you can add your own queries, in `lib/utils/db/list_queries.js` file and then append the name of it in list->queries section in `config.yml`.
+Similarly to **review** - you can add your own queries, in `lib/utils/db/list_queries.js` file and then append the name of it in list -> queries section in `config.yml`.
 
 ![list](docs/list.png)
 
